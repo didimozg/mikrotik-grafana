@@ -1,6 +1,14 @@
-# 🛡️ Guide: Cyber Attack Map with MikroTik & Grafana
+# MikroTik Cyber Attack Map with Grafana
 
-**Stack:** MikroTik → Rsyslog (LXC) → Promtail(LXC) → Loki (LXC)  → Grafana.
+[![Release](https://img.shields.io/github/v/release/didimozg/mikrotik-grafana?display_name=tag)](https://github.com/didimozg/mikrotik-grafana/releases)
+[![CI](https://img.shields.io/github/actions/workflow/status/didimozg/mikrotik-grafana/ci.yml?branch=main&label=CI)](https://github.com/didimozg/mikrotik-grafana/actions/workflows/ci.yml)
+[![License](https://img.shields.io/github/license/didimozg/mikrotik-grafana)](./LICENSE)
+
+Russian documentation: [README_RU.md](./README_RU.md).
+
+This repository documents a MikroTik log pipeline for cyber attack map dashboards built with rsyslog, Promtail, Loki, and Grafana.
+
+**Stack:** MikroTik → Rsyslog (LXC) → Promtail (LXC) → Loki (LXC) → Grafana.
 
 -----
 
@@ -277,7 +285,7 @@ To prevent firewall logs from spamming the WinBox log window:
   }
 }
 ```
-<img width="642" height="419" alt="изображение" src="https://github.com/user-attachments/assets/f76354d1-6929-4bbd-9eb9-585a09be63a2" />
+<img width="642" height="419" alt="screenshot" src="https://github.com/user-attachments/assets/f76354d1-6929-4bbd-9eb9-585a09be63a2" />
 
 P.S.
 

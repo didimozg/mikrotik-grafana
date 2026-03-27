@@ -1,6 +1,8 @@
 
 # 🛡️ Инструкция: Карта кибератак с MikroTik в Grafana
 
+English documentation: [README.md](./README.md).
+
 **Стек:** MikroTik → Rsyslog (LXC) → Promtail(LXC) → Loki(LXC) → Grafana.
 
 -----
