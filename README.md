@@ -49,10 +49,10 @@ Create a new config file:
 nano /etc/rsyslog.d/mikrotik.conf
 ```
 
-Paste the following (Replace `192.168.X.X` with your MikroTik's IP):
+Paste the following (Replace the example `192.0.2.10` with your MikroTik's IP):
 
 ```conf
-if $fromhost-ip == '192.168.X.X' then {
+if $fromhost-ip == '192.0.2.10' then {
     action(type="omfile" file="/var/log/mikrotik.log")
     stop
 }
@@ -171,13 +171,13 @@ Configure the router to send logs to your server.
 
 ### 1\. Create Logging Action
 
-Run this in the MikroTik terminal (Replace `192.168.X.Y` with your LXC IP):
+Run this in the MikroTik terminal (Replace the example `192.0.2.20` with your LXC IP):
 
 ```mikrotik
 /system logging action add \
     name=lokisyslog \
     target=remote \
-    remote=192.168.X.Y \
+    remote=192.0.2.20 \
     remote-port=1514 \
     src-address=0.0.0.0 \
     remote-log-format=bsd-syslog \
@@ -309,4 +309,4 @@ This was the critical issue we faced at the end.
 * If we configured Promtail to read the general system log, it would read Loki's logs and send them back to Loki.
 * Loki would ingest them and write a new log entry saying "I received data".
 * This creates an infinite feedback loop (log storm) that would crash the server or fill the disk.
-* **Rsyslog** allowed us to apply a filter: *"If data comes from IP 192.168.X.X (MikroTik), write it to a dedicated file `mikrotik.log`"*. This physically separated the MikroTik logs from the system noise.
+* **Rsyslog** allowed us to apply a filter: *"If data comes from IP 192.0.2.10 (MikroTik), write it to a dedicated file `mikrotik.log`"*. This physically separated the MikroTik logs from the system noise.
