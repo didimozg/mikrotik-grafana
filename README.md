@@ -14,7 +14,8 @@ This repository documents a MikroTik log pipeline for cyber attack map dashboard
 
 ## Phase 1. Server Setup (Proxmox LXC)
 
-We use **Rsyslog** as a reliable buffer to receive UDP logs from MikroTik and write them to a specific file.
+We use **Rsyslog** as a reliable buffer to receive UDP logs from
+MikroTik and write them to a specific file.
 
 ### 1\. Prepare the LXC Container
 
@@ -291,7 +292,8 @@ P.S.
 
 ### Why did we use Rsyslog?
 
-We were forced to place Rsyslog as a middleware between the router and Promtail for three technical reasons:
+We were forced to place Rsyslog as a middleware between the router and
+Promtail for three technical reasons:
 
 **1. Non-compliant Syslog implementation in RouterOS v7**
 In the latest RouterOS versions (v7), MikroTik changed how logging works.
